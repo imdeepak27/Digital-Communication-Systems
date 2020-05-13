@@ -1,0 +1,15 @@
+clc;
+clear;
+p=input("Enter The Value of p = ");
+v=input("Enter The Value of v =  ");
+Xmax=input("Enter The Value of Xmax = ");
+SNR=3*p*(2^(2*v))/(Xmax^2);
+EbNo=10:1:20;
+y=sqrt(EbNo);
+z=erfc(0.5*y);
+PE=0.5*z;
+plot(EbNo,PE);
+xlabel('SNR');
+ylabel('PE');
+title('PE for PCM');
+disp(SNR);
